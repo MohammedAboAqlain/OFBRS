@@ -1,5 +1,5 @@
 <template>
-    <div class="row text-center mx-0 rownded">
+    <div class="row text-center mx-0 rownded bg-light">
         <div class="col-12 d-flex justify-content-center align-items-center">
             <form>
                 <div class="form-group">

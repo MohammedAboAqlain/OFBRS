@@ -1,11 +1,17 @@
 <template>
     <div class="row text-center mx-0 rownded">
-        <router-link dir="ltr" v-for="value in homeData" :key="value" to="/Markets" class="col-sm-6 col-md-4 col-lg-3 bg-light">
+        <router-link dir="ltr" v-for="value in homeData" :key="value" :to="value.path" class="col-sm-6 col-md-4 col-lg-3 bg-light">
             <span>
                 <img :src="value.imgSrc" class="w-25" alt="cannot load image">
                 <h6>{{ value.name }}</h6>
             </span>
         </router-link>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <span>
+                <img src="../assets/icons/copyright.png" class="w-25" alt="cannot load image">
+                <h6>2021&copy;</h6>
+            </span>
+        </div>
     </div>
 </template>
 
@@ -21,23 +27,21 @@
     import sellerIcon from '../assets/icons/seller.png'
     import fishermanReportIcon from '../assets/icons/FishermanReport.png'
     import trashIcon from '../assets/icons/Trash.png'
-    import copyrightIcon from '../assets/icons/copyright.png'
     export default{
         data(){
             return {
                 homeData: [
-                    {name: 'الأسواق', imgSrc: marketIcon},
-                    {name: 'تبييض كشف صياد', imgSrc: fishermanInputReportIcon},
-                    {name: 'القيود', imgSrc: entriesIcon},
-                    {name: 'النسخ الاحتياطي', imgSrc: restoreIcon},
-                    {name: 'الصيادين', imgSrc: fishermanIcon},
-                    {name: 'كشف استلام', imgSrc: sellerReportIcon},
-                    {name: 'المخزن', imgSrc: warehouseIcon},
-                    {name: 'مساعدة', imgSrc: helpIcon},
-                    {name: 'التجار', imgSrc: sellerIcon},
-                    {name: 'كشف تسليم', imgSrc: fishermanReportIcon},
-                    {name: 'سلة المحذوفات', imgSrc: trashIcon},
-                    {name: '2021&copy;', imgSrc: copyrightIcon}
+                    {name: 'الأسواق', imgSrc: marketIcon, path: '/Markets'},
+                    {name: 'تبييض كشف صياد', imgSrc: fishermanInputReportIcon, path: '/FishermanInputReport'},
+                    {name: 'القيود', imgSrc: entriesIcon, path: '/AllEntries'},
+                    {name: 'النسخ الاحتياطي', imgSrc: restoreIcon, path: '/Markets'},
+                    {name: 'الصيادين', imgSrc: fishermanIcon, path: '/Markets'},
+                    {name: 'كشف استلام', imgSrc: sellerReportIcon, path: '/Markets'},
+                    {name: 'المخزن', imgSrc: warehouseIcon, path: '/Markets'},
+                    {name: 'مساعدة', imgSrc: helpIcon, path: '/Markets'},
+                    {name: 'التجار', imgSrc: sellerIcon, path: '/Markets'},
+                    {name: 'كشف تسليم', imgSrc: fishermanReportIcon, path: '/Markets'},
+                    {name: 'سلة المحذوفات', imgSrc: trashIcon, path: '/Markets'},
                 ]
             }
         }
